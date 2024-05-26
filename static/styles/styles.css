@@ -200,8 +200,9 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 344px;
-  height: 512px;
+  width: 20%;
+  height: 55vh;
+  margin-right: 20px;
   background-color: #e9d9c2;
   transition: transform 0.3s;
 }
@@ -212,16 +213,24 @@ header {
 }
 
 .heart-icon {
-  font-size: 30px;
-  color: #4d4c4c;
+  cursor: pointer;
   position: absolute;
   top: 25px;
   right: 25px;
 }
 
+.heart-icon i {
+  font-size: 30px;
+  color: #4d4c4c;
+  transition: color 0.3s;
+}
+
+.heart-icon i.red {
+  color: red;
+}
+
 .list-container {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   margin-top: 25px;
   width: 100%;
@@ -229,8 +238,7 @@ header {
 }
 
 .item-container .image {
-  width: 273px;
-  height: 273px;
+  width: 95%;
 }
 
 .image img {
