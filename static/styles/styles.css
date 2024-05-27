@@ -4,6 +4,12 @@
   box-sizing: border-box;
 }
 
+body {
+  font-family: "Crimson Text", serif;
+  margin: 0;
+  padding: 0;
+}
+
 header {
   display: flex;
   flex-direction: column;
@@ -84,6 +90,7 @@ header {
   margin-left: 55px;
   display: flex;
   flex-direction: column;
+  cursor: pointer;
 }
 
 .logo h1 {
@@ -106,6 +113,10 @@ header {
   gap: 40px;
   font-size: 34px;
   color: #4d4c4c;
+}
+
+.icons:hover {
+  cursor: pointer;
 }
 
 .second {
@@ -138,6 +149,7 @@ header {
 }
 
 .main-video {
+  position: relative;
   width: 100%;
   height: 402px;
   margin-bottom: 80px;
@@ -148,6 +160,22 @@ header {
   height: 100%;
   object-fit: cover;
   pointer-events: none;
+}
+
+.main-video .video-text {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  width: 13%;
+  transform: translateY(-50%);
+  text-align: left;
+  color: #4d4c4c;
+  font-family: "Crimson Text", serif;
+  font-size: 24px;
+  font-weight: 400;
+  white-space: pre-wrap;
+  backdrop-filter: blur(20px);
+  border-radius: 10px;
 }
 
 .list-header {
@@ -275,4 +303,181 @@ header {
   color: #4d4c4c;
   font-weight: 400;
   font-family: "Crimson Text", serif;
+}
+
+.info-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 75vh;
+  padding: 20px;
+}
+
+.info-list {
+  flex: 1;
+  margin-right: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.info-list ul {
+  padding: 0;
+}
+
+.info-list ul li {
+  margin-bottom: 10px;
+}
+
+.main-image {
+  flex: 1;
+  text-align: center;
+}
+
+.main-image img {
+  max-width: 100%;
+}
+
+.buy-field {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  flex: 1;
+  gap: 20px;
+}
+
+.buy-field .header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.buy-field .header h1 {
+  font-family: "Playfair Display", serif;
+}
+
+.status {
+  color: #000;
+  font-size: 16px;
+  padding: 5px 10px;
+  background-color: #fff2d9;
+}
+
+.availability {
+  font-size: 16px;
+  color: #668a00;
+}
+
+.metal-color-field,
+.size-field {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.metal-color-field label,
+.size-field label {
+  margin-right: 10px;
+}
+
+.price {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.add-to-cart,
+.buy-now {
+  width: 200px;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.add-to-cart {
+  background-color: #333;
+  color: white;
+}
+
+.buy-now {
+  background-color: white;
+  color: #333;
+  border: 1px solid #333;
+}
+
+.description-container {
+  display: flex;
+  width: 100%;
+  height: 608px;
+  margin-top: 25px;
+  background-color: #e9d9c2;
+}
+
+.description-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 20px;
+  width: 50%;
+  height: 100%;
+}
+
+.description-text h2 {
+  font-size: 32px;
+  color: #4d4c4c;
+  font-weight: 600;
+  font-family: "Crimson Text", serif;
+}
+
+.description-text p {
+  font-size: 20px;
+  color: #4d4c4c;
+  font-weight: 400;
+  font-family: "Playfair Display", serif;
+}
+
+.description-image {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 50%;
+  height: 100%;
+  padding: 20px;
+}
+
+.des1 {
+  height: 483px;
+  width: 360px;
+}
+
+.des1 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.des2 {
+  height: 208px;
+  width: 292px;
+}
+
+.des2 img {
+  width: 100%;
+  height: 100%;
+}
+
+.margin-top {
+  margin: 25px 0;
+}
+
+.liked {
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  gap: 25px;
 }
