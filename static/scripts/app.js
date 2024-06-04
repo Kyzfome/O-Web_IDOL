@@ -26,10 +26,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  document.getElementById("heart").addEventListener("click", function () {
-    window.location.href = "liked-items.html";
-  });
-
   const item = this.querySelectorAll(".image");
   item.forEach(function (image) {
     image.addEventListener("click", function () {
@@ -45,11 +41,19 @@ if (window.location.pathname.endsWith("liked-items.html")) {
     );
     const likedItems = JSON.parse(localStorage.getItem("likedItems")) || [];
 
-    likedItems.forEach((item) => {
-      const itemContainer = document.createElement("div");
-      itemContainer.classList.add("item-container");
+    if (likedItems.length === 0) {
+      likedItemsContainer.innerHTML = `
+        <div class="in-progress">
+          <h1>You haven't liked any items yet</h1>
+          <p>Go back to the <a href="index.html">home page</a> and start liking items!</p>
+        </div>
+      `;
+    } else {
+      likedItems.forEach((item) => {
+        const itemContainer = document.createElement("div");
+        itemContainer.classList.add("item-container");
 
-      itemContainer.innerHTML = `
+        itemContainer.innerHTML = `
         <div class="heart-icon">
           <i class="far fa-heart red"></i>
         </div>
@@ -63,20 +67,22 @@ if (window.location.pathname.endsWith("liked-items.html")) {
         </div>
       `;
 
-      itemContainer
-        .querySelector(".heart-icon")
-        .addEventListener("click", function () {
-          const heartIcon = this.querySelector("i");
-          const title = item.title;
+        itemContainer
+          .querySelector(".heart-icon")
+          .addEventListener("click", function () {
+            const heartIcon = this.querySelector("i");
+            const title = item.title;
 
-          let likedItems = JSON.parse(localStorage.getItem("likedItems")) || [];
-          likedItems = likedItems.filter((item) => item.title !== title);
-          localStorage.setItem("likedItems", JSON.stringify(likedItems));
+            let likedItems =
+              JSON.parse(localStorage.getItem("likedItems")) || [];
+            likedItems = likedItems.filter((item) => item.title !== title);
+            localStorage.setItem("likedItems", JSON.stringify(likedItems));
 
-          likedItemsContainer.removeChild(itemContainer);
-        });
+            likedItemsContainer.removeChild(itemContainer);
+          });
 
-      likedItemsContainer.appendChild(itemContainer);
-    });
+        likedItemsContainer.appendChild(itemContainer);
+      });
+    }
   });
 }

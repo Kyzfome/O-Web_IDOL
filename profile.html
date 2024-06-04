@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Liked</title>
+    <title>Profile</title>
     <link rel="stylesheet" href="static/styles/styles.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;700&family=Playfair+Display:wght@400;700&display=swap"
@@ -41,9 +41,15 @@
             <p>jewelry house</p>
           </div>
           <div class="icons">
-            <i class="far fa-user"></i>
-            <i class="far fa-heart" id="heart"></i>
-            <i class="fas fa-shopping-basket"></i>
+            <a href="profile.html">
+              <i class="far fa-user"></i>
+            </a>
+            <a href="liked-items.html">
+              <i class="far fa-heart"></i>
+            </a>
+            <a href="#">
+              <i class="fas fa-shopping-basket"></i>
+            </a>
           </div>
         </div>
         <div class="second">
@@ -60,11 +66,45 @@
         </div>
       </div>
     </header>
-    <div class="list-header">
-      <h1 class="margin-top">YOUR LIKED ITEMS</h1>
+
+    <div class="profile-container">
+      <div class="sidebar">
+        <ul>
+          <li class="active"><a href="#">Personal data</a></li>
+          <li><a href="#">Order history</a></li>
+          <li><a href="#">My purchases</a></li>
+          <li><a href="#">Wish list</a></li>
+          <li><a href="#">Reviewed products</a></li>
+          <li><a href="#">Electronic guarantees</a></li>
+          <li><a href="#">Discounts and promotions</a></li>
+          <li class="exit"><a href="#">Exit</a></li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2>Personal Information</h2>
+        <form>
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" />
+
+          <label for="surname">Surname</label>
+          <input type="text" id="surname" name="surname" />
+
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" />
+
+          <label for="phone">Phone number</label>
+          <input type="text" id="phone" name="phone" />
+
+          <h3>Date of Birth</h3>
+          <div class="dob">
+            <select id="day" name="day"></select>
+            <select id="month" name="month"></select>
+            <select id="year" name="year"></select>
+          </div>
+        </form>
+      </div>
     </div>
-    <div class="list-container liked" id="liked-items-container"></div>
-    <script src="static/scripts/app.js"></script>
+
     <script src="static/scripts/return.js"></script>
   </body>
 </html>
